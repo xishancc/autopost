@@ -41,31 +41,46 @@ def data(schoolcode, UA, cook):
     # questionsok记录昨天填写的题目
     questionsok = []
     type1 = []
-    type3 = []
+    type2 = []
     type4 = []
-    type7 = []
-    type8 = []
-    type9 = []
+    type10 = []
+    type11 = []
+    type12 = []
+    type13 = []
+    type14 = []
+    type15 = []
+    type16 = []
+    type22 = []
 
     for i in range(len(data)):
-        # 1：选择题
-        # 3：填空题
-        # 7：定位
+        # 1：选择题    1:定位
+        # 3：填空题。   2～14，16:选择
+        # 7：定位。     15，22填空
         # 8：填空题（不在校，所在省市）
         # 9：滑动选择题（返回时间）
         num = data[i].get("question_type")
         if num == 1:
             type1.append(data[i])
-        elif num == 3:
+        elif num == 2:
             type3.append(data[i])
         elif num == 4:
             type4.append(data[i])
-        elif num == 7:
+        elif num == 10:
             type7.append(data[i])
-        elif num == 8:
+        elif num == 11:
             type8.append(data[i])
-        elif num == 9:
+        elif num == 12:
             type9.append(data[i])
+        elif num == 13:
+            type7.append(data[i])
+        elif num == 14:
+            type7.append(data[i])
+        elif num == 15:
+            type7.append(data[i])
+        elif num == 16:
+            type7.append(data[i])
+        elif num == 22:
+            type7.append(data[i])
 
     def ques():
         return {
@@ -125,32 +140,77 @@ def data(schoolcode, UA, cook):
             que["hide"] = true
         questions.append(que)
 
-    for i in range(len(type7)):
+    for i in range(len(type10)):
         que = ques()
-        que['questionid'] = type7[i].get("questionid")
-        que['content'] = type7[i].get("user_answer_content")
-        que['question_type'] = type7[i].get("question_type")
-        que["answered"] = type7[i].get("user_answer_this_question")
+        que['questionid'] = type10[i].get("questionid")
+        que['content'] = type10[i].get("user_answer_content")
+        que['question_type'] = type10[i].get("question_type")
+        que["answered"] = type10[i].get("user_answer_this_question")
         questions.append(que)
 
-    for i in range(len(type8)):
+    for i in range(len(type11)):
         que = ques()
-        que['questionid'] = type8[i].get("questionid")
-        que['content'] = type8[i].get("user_answer_content")
-        que['question_type'] = type8[i].get("question_type")
-        que['answered'] = type8[i].get("user_answer_this_question")
+        que['questionid'] = type11[i].get("questionid")
+        que['content'] = type11[i].get("user_answer_content")
+        que['question_type'] = type11[i].get("question_type")
+        que['answered'] = type11[i].get("user_answer_this_question")
         que["hide"] = true
         questions.append(que)
 
-    for i in range(len(type9)):
+    for i in range(len(type12)):
         que = ques()
-        que['questionid'] = type9[i].get("questionid")
-        que['question_type'] = type9[i].get("question_type")
-        que['content'] = type9[i].get("user_answer_content")
-        que['answered'] = type9[i].get("user_answer_this_question")
+        que['questionid'] = type12[i].get("questionid")
+        que['question_type'] = type12[i].get("question_type")
+        que['content'] = type12[i].get("user_answer_content")
+        que['answered'] = type12[i].get("user_answer_this_question")
         que["hide"] = true
         questions.append(que)
 
+    for i in range(len(type13)):
+        que = ques()
+        que['questionid'] = type13[i].get("questionid")
+        que['question_type'] = type13[i].get("question_type")
+        que['content'] = type13[i].get("user_answer_content")
+        que["answered"] = type13[i].get("user_answer_this_question")
+        que["hide"] = true
+        questions.append(que)
+        
+    for i in range(len(type14)):
+        que = ques()
+        que['questionid'] = type14[i].get("questionid")
+        que['question_type'] = type14[i].get("question_type")
+        que['content'] = type14[i].get("user_answer_content")
+        que["answered"] = type14[i].get("user_answer_this_question")
+        que["hide"] = true
+        questions.append(que)
+        
+    for i in range(len(type15)):
+        que = ques()
+        que['questionid'] = type15[i].get("questionid")
+        que['question_type'] = type15[i].get("question_type")
+        que['content'] = type15[i].get("user_answer_content")
+        que["answered"] = type15[i].get("user_answer_this_question")
+        que["hide"] = true
+        questions.append(que)
+        
+    for i in range(len(type16)):
+        que = ques()
+        que['questionid'] = type16[i].get("questionid")
+        que['question_type'] = type16[i].get("question_type")
+        que['content'] = type16[i].get("user_answer_content")
+        que["answered"] = type16[i].get("user_answer_this_question")
+        que["hide"] = true
+        questions.append(que)
+        
+    for i in range(len(type22)):
+        que = ques()
+        que['questionid'] = type22[i].get("questionid")
+        que['question_type'] = type22[i].get("question_type")
+        que['content'] = type22[i].get("user_answer_content")
+        que["answered"] = type22[i].get("user_answer_this_question")
+        que["hide"] = true
+        questions.append(que)
+        
     # 选择排序法
     for i in range(len(questions) - 1):
         n = i
