@@ -106,12 +106,12 @@ def data(schoolcode, UA, cook):
             que["hide"] = true
         questions.append(que)
 
-    for i in range(len(type3)):
+    for i in range(len(type2)):
         que = ques()
-        que['questionid'] = type3[i].get("questionid")
-        que['question_type'] = type3[i].get("question_type")
-        que['content'] = type3[i].get("user_answer_content")
-        que["answered"] = type3[i].get("user_answer_this_question")
+        que['questionid'] = type2[i].get("questionid")
+        que['question_type'] = type2[i].get("question_type")
+        que['content'] = type2[i].get("user_answer_content")
+        que["answered"] = type2[i].get("user_answer_this_question")
         que["hide"] = true
         questions.append(que)
 
