@@ -1,8 +1,9 @@
 [
     {
-        "name": "姓名",
-        "stucode": "学号",
-        "password": "密码",
+        "name": "sjy",
+        "stucode": "1913302120",
+        "password": "1913302120",
+        "schoolcode": "xmut",
         "enable": "true"
     },
     {
