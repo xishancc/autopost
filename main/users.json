@@ -7,9 +7,10 @@
         "enable": "true"
     },
     {
-        "name": "姓名2",
-        "stucode": "学号",
-        "password": "密码",
+        "name": "lzr",
+        "stucode": "1913302115",
+        "password": "lzr010703",
+        "schoolcode": "xmut",
         "enable": "true"
     }
 ]
