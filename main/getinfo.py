@@ -102,21 +102,21 @@ def data(schoolcode, UA, cook):
 
     for i in range(len(type2)):
         que = ques()
-        opt = type1[i].get("option_list")
+        opt = type2[i].get("option_list")
 
-        if str(type1[i].get("user_answer_this_question")) == 'False':
-            que['questionid'] = type1[i].get("questionid")
-            que["question_type"] = type1[i].get("question_type")
+        if str(type2[i].get("user_answer_this_question")) == 'False':
+            que['questionid'] = type2[i].get("questionid")
+            que["question_type"] = type2[i].get("question_type")
 
         else:
             for ii in range(len(opt)):
-                if str(opt[ii].get("optionid")) == type1[i].get("user_answer_optionid"):
+                if str(opt[ii].get("optionid")) == type2[i].get("user_answer_optionid"):
                     que['questionid'] = opt[ii].get("questionid")
                     que["optionid"] = opt[ii].get("optionid")
                     que['optiontitle'] = opt[ii].get("title")
-                    que["question_type"] = type1[i].get("question_type")
+                    que["question_type"] = type2[i].get("question_type")
                     break
-        que["answered"] = type1[i].get("user_answer_this_question")
+        que["answered"] = type2[i].get("user_answer_this_question")
         if que["answered"] == false:
             que["hide"] = true
         questions.append(que)
