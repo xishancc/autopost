@@ -7,4 +7,12 @@
         "schoolcode": "xmut",
         "enable": "true"
     }
+    
+    {
+        "name": "lzr",
+        "stucode": "1913302123",
+        "password": "wzr120611",
+        "schoolcode": "xmut",
+        "enable": "true"
+    }
 ]
